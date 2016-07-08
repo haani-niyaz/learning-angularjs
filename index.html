@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller="StoreController as store">
+	<div ng-repeat="product in store.products">
+		<h1>{{product.name}}</h1>
+		<h2>{{product.price | currency}}</h2>
+		<h3>{{product.desc}}</h3>	
+		<button ng-show="store.product.buy">Add to Bookshelf</button>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>	
+	<script type="text/javascript" src="js/store.js"></script>
+</body>
+</html>
