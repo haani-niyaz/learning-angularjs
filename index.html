@@ -6,11 +6,33 @@
 	<title>Document</title>
 </head>
 <body ng-controller="StoreController as store">
-	<div ng-repeat="product in store.products">
-		<h1>{{product.name}}</h1>
-		<h2>{{product.price | currency}}</h2>
-		<h3>{{product.desc}}</h3>	
-		<button ng-show="store.product.buy">Add to Bookshelf</button>
+	
+	<div ng-repeat="product in store.products">	
+
+		<section>
+			<ul class="nav nav-pills">
+			
+				<div class="panel">
+					<h4>Name</h4>
+					<p>{{product.name}}</p>
+				</div>
+		  		<!-- <li role="presentation" class="active"><a href ng-click="tab = 1">Name</a></li> -->
+		  		<li role="presentation"><a href ng-click="tab = 1">Price</a></li>
+		  		<li role="presentation"><a href ng-click="tab = 2">Description</a></li>
+			</ul>
+
+
+			<div class="panel" ng-show="tab == 1">
+				<h4>Price</h4>
+				<p>{{product.price | currency}}</p>
+			</div>
+
+			<div class="panel" ng-show="tab == 2">
+				<h4>Description</h4>
+				<p>{{product.desc}}</p>
+			</div>
+		
+		</section>
 	</div>
 	<script type="text/javascript" src="js/angular.min.js"></script>	
 	<script type="text/javascript" src="js/store.js"></script>
