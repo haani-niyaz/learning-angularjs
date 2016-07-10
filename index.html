@@ -8,7 +8,7 @@
 <body ng-controller="StoreController as store">
 	
 	<div ng-repeat="product in store.products">	
-		<section ng-controller="PanelController as panel">
+		<section ng-controller="TabController as tab">
 			<ul class="nav nav-pills">
 			
 				<div class="panel">
@@ -17,24 +17,24 @@
 				</div>
 
 		  		<li role="presentation">
-		  			<li ng-class="{active:panel.isSelected(1)}">
-		  				<a href ng-click="panel.selectTab(1)">Price</a>
+		  			<li ng-class="{active:tab.isSelected(1)}">
+		  				<a href ng-click="tab.selectTab(1)">Price</a>
 		  			</li>
 		  		</li>
 		  		<li role="presentation">
-		  			<li ng-class="{active:panel.isSelected(2)}">
-		  				<a href ng-click="panel.selectTab(2)">Description</a>
+		  			<li ng-class="{active:tab.isSelected(2)}">
+		  				<a href ng-click="tab.selectTab(2)">Description</a>
 		  			</li>
 		  		</li>
 
 			</ul>
 
-			<div class="panel" ng-show="panel.isSelected(1)">
+			<div class="panel" ng-show="tab.isSelected(1)">
 				<h4>Price</h4>
 				<p>{{product.price | currency}}</p>
 			</div>
 
-			<div class="panel" ng-show="panel.isSelected(2)">
+			<div class="panel" ng-show="tab.isSelected(2)">
 				<h4>Description</h4>
 				<p>{{product.desc}}</p>
 			</div>		

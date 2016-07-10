@@ -23,7 +23,7 @@
 	});
 
 
-	app.controller('PanelController',function(){
+	app.controller('TabController',function(){
 		// Assign a default value
 		this.tab = 1;
 
