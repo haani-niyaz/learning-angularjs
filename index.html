@@ -8,38 +8,39 @@
 <body ng-controller="StoreController as store">
 	
 	<div ng-repeat="product in store.products">	
-		<section ng-init="tab = 1">
+		<section ng-controller="PanelController as panel">
 			<ul class="nav nav-pills">
 			
 				<div class="panel">
 					<h4>Name</h4>
 					<p>{{product.name}}</p>
 				</div>
-			
+
 		  		<li role="presentation">
-		  			<li ng-class="{active:tab == 1}">
-		  				<a href ng-click="tab = 1">Price</a>
+		  			<li ng-class="{active:panel.isSelected(1)}">
+		  				<a href ng-click="panel.selectTab(1)">Price</a>
 		  			</li>
 		  		</li>
 		  		<li role="presentation">
-		  			<li ng-class="{active:tab == 2}">
-		  				<a href ng-click="tab = 2">Description</a>
+		  			<li ng-class="{active:panel.isSelected(2)}">
+		  				<a href ng-click="panel.selectTab(2)">Description</a>
 		  			</li>
 		  		</li>
+
 			</ul>
 
-			<div class="panel" ng-show="tab == 1">
+			<div class="panel" ng-show="panel.isSelected(1)">
 				<h4>Price</h4>
 				<p>{{product.price | currency}}</p>
 			</div>
 
-			<div class="panel" ng-show="tab == 2">
+			<div class="panel" ng-show="panel.isSelected(2)">
 				<h4>Description</h4>
 				<p>{{product.desc}}</p>
 			</div>		
 		</section>
 	</div>
-	
+
 	<script type="text/javascript" src="js/angular.min.js"></script>	
 	<script type="text/javascript" src="js/store.js"></script>
 </body>

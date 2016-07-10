@@ -23,4 +23,20 @@
 	});
 
 
+	app.controller('PanelController',function(){
+		// Assign a default value
+		this.tab = 1;
+
+		this.selectTab = function (setTab){
+			this.tab = setTab;
+		};
+
+
+		this.isSelected = function(checkTab){
+			return this.tab == checkTab;
+		}
+
+	});
+
+
 })();
