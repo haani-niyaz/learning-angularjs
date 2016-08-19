@@ -7,14 +7,16 @@
 			price: 9,
 			desc: 'Rules for focued success in a distracted world',
 			buy: false,
-			soldOut: false
+			soldOut: false,
+			reviews: []
 		},
 		{
 			name: 'The One Thing',
 			price: 9.99,
 			desc: 'The Surprisingly Simple Truth Behind Extraordinary Results',
 			buy: false,
-			soldOut: false
+			soldOut: false,
+			reviews: []
 		}		
 	]
 
@@ -37,6 +39,19 @@
 		}
 
 	});
+
+
+	app.controller('ReviewController', function(){
+		this.review = {};
+
+		this.addReview = function(product){
+			product.reviews.push(this.review);
+			
+			// Clear form when submit button is hit
+			this.review = {};
+		}
+	});
+
 
 
 })();
